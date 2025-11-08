@@ -1,0 +1,17 @@
+/* flexbox는 정렬을 할 요소가 존재하는 부모에 정의함 */
+body {
+    /* flex를 적용 */
+    display: flex;
+
+    /* justify-content 프로퍼티 : x축의 방향에서의 정렬을 선언. 생략하면 flex-start가 기본값 */
+    /* space-between : 맨 마지막 양 옆에 요소를 배치하고, 나머지 요소를 안에 동일한 여백을 갖도록 배치하겠다 */
+    justify-content: space-between;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    font-size: 3rem;
+    text-align: center;
+}
