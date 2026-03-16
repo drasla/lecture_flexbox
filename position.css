@@ -1,0 +1,68 @@
+/* 기본 레이아웃 설정 */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f8f9fa;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 공통 박스 스타일 */
+.box {
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 🚀 1. Fixed (고정) */
+.fixed {
+    position: fixed;
+    bottom: 20px;   /* 브라우저 창 바닥에서 20px 위 */
+    right: 20px;    /* 브라우저 창 오른쪽에서 20px 왼쪽 */
+    background-color: #e74c3c; /* 빨간색 */
+    z-index: 100;   /* 다른 요소들보다 항상 위에 보이도록 설정 */
+}
+
+/* 📌 2. Sticky (끈적끈적하게 붙음) */
+.sticky {
+    position: sticky;
+    top: 10px;      /* 스크롤 하다가 화면 상단 10px 위치에 닿으면 고정됨 */
+    background-color: #2ecc71; /* 초록색 */
+    z-index: 50;
+}
+
+/* 📦 3. Relative (상대적 위치 & 기준점) */
+.parent-relative {
+    position: relative; /* 자식인 absolute 요소의 기준점이 됩니다 */
+    background-color: #ecf0f1;
+    padding: 40px;
+    border: 2px dashed #95a5a6;
+    margin-top: 50px;
+}
+
+/* 🎯 4. Absolute (절대적 위치) */
+.absolute {
+    position: absolute;
+    top: -20px;     /* '기준점(부모)'의 상단에서 위로 20px 튀어나감 */
+    right: -20px;   /* '기준점(부모)'의 우측에서 오른쪽으로 20px 튀어나감 */
+    background-color: #3498db; /* 파란색 */
+}
+
+/* 스크롤을 만들기 위한 긴 빈 공간 */
+.spacer {
+    height: 400px;
+    background-color: #e9ecef;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    border-radius: 8px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 종합 효과 쇼케이스 (Transform & Animation)</title>
+  <link rel="stylesheet" href="animation.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1>CSS Comprehensive Showcase</h1>
+
+  <h2>1. Transform Properties (on Hover)</h2>
+  <p>각 상자에 마우스를 올리면 각기 다른 transform 효과가 적용됩니다.</p>
+  <div class="examples-grid">
+
+    <div class="example-card">
+      <span class="example-title">Translate</span>
+      <span class="example-desc">(Move)</span>
+      <div class="box translate">Move Me</div>
+    </div>
+
+    <div class="example-card">
+      <span class="example-title">Scale</span>
+      <span class="example-desc">(Resize)</span>
+      <div class="box scale">Size Me</div>
+    </div>
+
+    <div class="example-card">
+      <span class="example-title">Rotate</span>
+      <span class="example-desc">(Spin)</span>
+      <div class="box rotate">Spin Me</div>
+    </div>
+
+    <div class="example-card">
+      <span class="example-title">Skew</span>
+      <span class="example-desc">(Slant)</span>
+      <div class="box skew">Slant Me</div>
+    </div>
+
+    <div class="example-card origin">
+      <span class="example-title">Origin</span>
+      <span class="example-desc">(Pivot change)</span>
+      <div class="box origin-box">Pivot Me</div>
+    </div>
+
+  </div>
+
+  <h2>2. Opacity (on Hover)</h2>
+  <div class="examples-grid">
+    <div class="example-card">
+      <span class="example-title">Opacity</span>
+      <span class="example-desc">(Transparency)</span>
+      <div class="box opacity-box">Fade Me</div>
+    </div>
+  </div>
+
+  <h2>3. Detailed CSS Animation</h2>
+  <p>이 구역에서는 @keyframes를 사용한 복잡한 연속 애니메이션이 무한 반복됩니다.</p>
+  <div class="animation-container">
+    <div class="animated-sphere"></div>
+    <p style="font-size: 0.9em; color: #7f8c8d; text-align: center;">이 공은 시간에 따라 위치, 크기, 비율, 색상, 투명도가 유기적으로 변합니다.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

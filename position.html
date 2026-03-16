@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Position 예제</title>
+    <link rel="stylesheet" href="position.css">
+</head>
+<body>
+
+<div class="box fixed">🚀 Fixed<br>(우측 하단 고정)</div>
+
+<div class="content">
+    <h1>Position 속성 알아보기</h1>
+    <p>스크롤을 내려서 박스들이 어떻게 움직이는지 확인해 보세요!</p>
+
+    <div class="box sticky">📌 Sticky<br>(스크롤 시 상단에 딱 붙음!)</div>
+
+    <div class="spacer">스크롤을 더 내려보세요 👇</div>
+
+    <div class="parent-relative">
+        <strong>부모 컨테이너 (Relative)</strong><br>
+        이 박스는 자식 요소(Absolute)의 '기준점' 역할을 합니다.
+
+        <div class="box absolute">🎯 Absolute<br>(부모의 우측 상단)</div>
+    </div>
+
+    <div class="spacer">빈 공간입니다...</div>
+    <div class="spacer">여기도 빈 공간입니다...</div>
+</div>
+
+</body>
+</html>

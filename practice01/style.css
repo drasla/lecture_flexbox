@@ -1,100 +1,166 @@
+/* 전체 설정 */
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
-}
-
-.main-wrapper {
-    flex: 1;
-    display: flex;
-}
-
-.tap {
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main {
-    flex: 1;
-    overflow-y: scroll;
-    padding: 0 30px 30px 30px;
-    box-sizing: border-box;
-    border: 2px solid black;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8;
+    color: #2d3436;
 }
 
 .title-bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
-    font-size: 50px;
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 36px;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.tap {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2e8f0;
+    color: #a0aec0;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tap:hover {
+    background-color: #cbd5e1;
+    color: #475569;
 }
 
 .tap-title span {
     transform: rotateZ(-90deg);
+    white-space: nowrap;
 }
 
+/* 메인 컨텐츠 영역 */
 .main {
-    overflow-y: scroll;
-    height: 100%;
-    padding: 0px 30px 30px 30px;
+    flex: 1;
+    overflow-y: auto; /* 내용이 넘치면 이곳만 스크롤 */
+    padding: 40px;
+    background-color: #ffffff;
     box-sizing: border-box;
-    border: 2px solid black;
 }
 
+/* 상단 네비게이션 */
 .nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* 가로로 배치해서 깔끔하게 변경 */
+    justify-content: space-around;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 40px 0;
+    border-bottom: 2px solid #f1f5f9;
 }
 
 .main__nav-item {
-    padding: 15px;
+    padding: 15px 20px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
-    border-bottom: 2px solid black;
+    color: #94a3b8;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* 보더라인 겹치게 조정 */
+    transition: all 0.3s ease;
 }
 
+.main__nav-item:hover {
+    color: #3b82f6; /* 포인트 블루 컬러 */
+    border-bottom: 3px solid #3b82f6;
+}
 
+/* 필터 영역 */
 .filter {
-    margin: 30px 0;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .filter__types {
     display: flex;
-    gap: 10px;
-    color: grey;
+    gap: 15px;
+    color: #cbd5e1;
+}
+
+.filter__name {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter__name:hover {
+    color: #64748b;
 }
 
 .filter__name--selected {
-    color: black;
+    color: #3b82f6;
 }
 
 .projects {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .project {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    font-weight: 600;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.project__img-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project__img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
+.project:hover .project__img {
+    transform: scale(1.05);
+}
+
+.project__name {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #334155;
+    transition: color 0.3s ease;
+}
+
+.project:hover .project__name {
+    color: #3b82f6;
+}
