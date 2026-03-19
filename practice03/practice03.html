@@ -8,41 +8,11 @@
 </head>
 <body>
 <div class="dashboard">
-    <!-- 왼쪽: 하드디스크 및 설정 영역 (Flexbox) -->
     <section class="storage-area">
-        <!-- 하드디스크 1 -->
         <div class="card hdd-card">
-            <div class="hdd-icon"></div>
-            <div class="hdd-footer">
-                <span class="hdd-size">4TB</span>
-                <div class="hdd-dots">
-                    <span></span><span></span><span></span><span></span>
-                </div>
+            <div class="hdd-icon">
+                <div class="hdd-inner"></div>
             </div>
-        </div>
-        <!-- 하드디스크 2 -->
-        <div class="card hdd-card">
-            <div class="hdd-icon"></div>
-            <div class="hdd-footer">
-                <span class="hdd-size">4TB</span>
-                <div class="hdd-dots">
-                    <span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-        <!-- 하드디스크 3 -->
-        <div class="card hdd-card">
-            <div class="hdd-icon"></div>
-            <div class="hdd-footer">
-                <span class="hdd-size">4TB</span>
-                <div class="hdd-dots">
-                    <span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-        <!-- 하드디스크 4 -->
-        <div class="card hdd-card">
-            <div class="hdd-icon"></div>
             <div class="hdd-footer">
                 <span class="hdd-size">4TB</span>
                 <div class="hdd-dots">
@@ -51,7 +21,42 @@
             </div>
         </div>
 
-        <!-- 공간 사용량 -->
+        <div class="card hdd-card">
+            <div class="hdd-icon">
+                <div class="hdd-inner"></div>
+            </div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card hdd-card">
+            <div class="hdd-icon">
+                <div class="hdd-inner"></div>
+            </div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card hdd-card">
+            <div class="hdd-icon">
+                <div class="hdd-inner"></div>
+            </div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+
         <div class="card space-card">
             <div class="space-item">
                 <h3>Used (TB) / of Total</h3>
@@ -63,7 +68,6 @@
             </div>
         </div>
 
-        <!-- 설정 메뉴 -->
         <div class="card settings-card">
             <button class="settings-btn">Manage Space</button>
             <button class="settings-btn">Disc Settings</button>
@@ -71,7 +75,6 @@
         </div>
     </section>
 
-    <!-- 오른쪽: 용량 통계 -->
     <section class="stats-list">
         <div class="stat-row bg-slate">
             <span class="stat-name">System Files</span>
