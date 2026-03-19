@@ -1,146 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #7d4aa9;
+    font-family: 'Outfit', sans-serif; /* 기하학적이고 세련된 폰트 */
+    background-color: #7d4aa9; /* 기존 보라색 유지 */
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    padding: 30px;
 }
 
-.wrapper {
-    max-width: 80%;
-    background-color: black;
-    height: 95%;
+/* 외부 검은색 포장지 */
+.dashboard-wrapper {
+    background-color: #0f0f0f;
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    border-radius: 40px;
+    padding: 24px;
+    display: flex;
+}
+
+/* ----------------------------------
+   Flexbox 레이아웃 뼈대
+----------------------------------- */
+.flex-bento {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-row {
+    display: flex;
+    gap: 20px;
+    flex: 1; /* 부모 공간 안에서 동일하게 늘어남 */
+}
+
+/* 왼쪽, 오른쪽 비율 조정 */
+.left-col { flex: 1.2; }
+.right-col { flex: 1; }
+
+/* 공통 카드 스타일 */
+.card {
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+}
+
+/* ----------------------------------
+   각 영역별 디테일
+----------------------------------- */
+
+/* Header (왼쪽 위) */
+.header-card {
+    flex: 1.8; /* 아래 이미지들보다 더 높은 비율 차지 */
+    background-color: white;
     padding: 40px;
-    box-sizing: border-box;
-    display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-main {
+.header-top {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.rating { font-size: 18px; font-weight: 500; }
+.badge {
+    background-color: #ffc830;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.header-title {
+    font-size: 110px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    align-self: center;
+    line-height: 1;
+    color: #111;
+}
+
+.header-subtitle {
+    font-size: 26px;
+    font-weight: 500;
+    border-top: 3px solid #111;
+    padding-top: 24px;
+    line-height: 1.3;
+}
+
+/* Nav (오른쪽 위) */
+.nav-card {
     flex: 1;
-    gap: 5px;
+    background-color: #222;
+    color: white;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.column {
+.nav-card ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-
-    &:first-child {
-        flex: 1.5;
-        flex-wrap: wrap;
-
-        .header {
-            background-color: white;
-            border-radius: 12px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            .header__top {
-                display: flex;
-                justify-content: flex-end;
-                gap: 20px;
-                .header__reviews {
-                    font-size: 18px;
-                    font-weight: 400;
-                }
-                .header__label {
-                    border-radius: 12px;
-                    background-color: #ffc830;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    font-size: 12px;
-                    padding: 5px 10px;
-                }
-            }
-            .header__title {
-                font-size: 98px;
-                align-self: center;
-            }
-            .header__subtitle {
-                font-size: 44px;
-                font-weight: 500;
-                border-top: 2px solid black;
-                padding-top: 10px;
-            }
-        }
-    }
-    &:last-child {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-
-        .subgrid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            flex: 1.8;
-            .nav {
-                color: white;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 30px;
-                text-transform: uppercase;
-                .nav__cta {
-                    font-size: 18px;
-                }
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-                    font-size: 12px;
-                }
-            }
-            .grid__cells {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                flex: 1 1 100%;
-
-                .grid__cell {
-                    border-radius: 12px;
-                    font-size: 12px;
-                    text-transform: uppercase;
-                    padding: 20px;
-                    &:first-child {
-                        background-color: #ffc830;
-                    }
-                    &:nth-child(2) {
-                        background-color: white;
-                        transform: rotateZ(7deg);
-                        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
-                    }
-                }
-                .grid__cell-cta {
-                    color: white;
-                    text-transform: uppercase;
-                    font-size: 18px;
-                    padding-left: 20px;
-                    align-self: center;
-                }
-            }
-        }
-        .blog-post {
-            background-color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: flex-end;
-            font-size: 14px;
-            p {
-                padding: 20px;
-                width: 80%;
-            }
-        }
-    }
+    gap: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.grid__img {
-    background-image: url("https://picsum.photos/seed/picsum/400/300");
+.nav-card li { cursor: pointer; transition: color 0.2s; }
+.nav-card li:hover { color: #ffc830; }
+
+.cta {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Collab (오른쪽 중간 - 기울어진 박스들) */
+.collab-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.collab-box {
+    border-radius: 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 16px 20px;
+    text-align: center;
+    color: #111;
+    width: 80%;
+}
+
+.box-yellow { background-color: #ffc830; z-index: 1; }
+.box-white {
+    background-color: white;
+    transform: rotateZ(6deg); /* 기존의 재미있는 각도 유지 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    margin-top: -12px;
+    margin-left: 15px;
+    z-index: 2;
+}
+
+.collab-cta {
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Blog (오른쪽 아래) */
+.blog-card {
+    flex: 0.8; /* 세로 길이를 살짝 줄임 */
+    background-color: white;
+    padding: 30px;
+    align-items: flex-end; /* 텍스트를 바닥으로 내림 */
+}
+
+.blog-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    width: 90%;
+}
+
+/* 이미지 카드들 */
+.img-card {
+    flex: 1; /* 부모 row 안에서 동일한 넓이 가짐 */
     background-size: cover;
-    border-radius: 12px;
-    flex: 1;
-    min-height: 200px;
+    background-position: center;
 }
+
+.img-1 { background-image: url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop"); }
+.img-2 { background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"); }
+.img-3 { background-image: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"); }
+.img-4 { background-image: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop"); }

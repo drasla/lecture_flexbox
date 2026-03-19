@@ -2,107 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Storage Dashboard (Flexbox)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../reset.css" />
 </head>
 <body>
-<section class="info">
-    <div class="info__hd">
-        <div class="hd__discs">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="hd__footer">
-            <span class="hd__size">4TB</span>
-            <div class="hd__full">
-                <span></span><span></span><span></span><span></span>
+<div class="dashboard">
+    <!-- 왼쪽: 하드디스크 및 설정 영역 (Flexbox) -->
+    <section class="storage-area">
+        <!-- 하드디스크 1 -->
+        <div class="card hdd-card">
+            <div class="hdd-icon"></div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="info__hd">
-        <div class="hd__discs">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="hd__footer">
-            <span class="hd__size">4TB</span>
-            <div class="hd__full">
-                <span></span><span></span><span></span><span></span>
+        <!-- 하드디스크 2 -->
+        <div class="card hdd-card">
+            <div class="hdd-icon"></div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="info__hd">
-        <div class="hd__discs">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="hd__footer">
-            <span class="hd__size">4TB</span>
-            <div class="hd__full">
-                <span></span><span></span><span></span><span></span>
+        <!-- 하드디스크 3 -->
+        <div class="card hdd-card">
+            <div class="hdd-icon"></div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="info__hd">
-        <div class="hd__discs">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="hd__footer">
-            <span class="hd__size">4TB</span>
-            <div class="hd__full">
-                <span></span><span></span><span></span><span></span>
+        <!-- 하드디스크 4 -->
+        <div class="card hdd-card">
+            <div class="hdd-icon"></div>
+            <div class="hdd-footer">
+                <span class="hdd-size">4TB</span>
+                <div class="hdd-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="info__space">
-        <div class="info__space-item">
-            <h3>Used (TB) / of Total</h3>
-            <h2>5.66</h2>
+
+        <!-- 공간 사용량 -->
+        <div class="card space-card">
+            <div class="space-item">
+                <h3>Used (TB) / of Total</h3>
+                <h2>5.66</h2>
+            </div>
+            <div class="space-item">
+                <h3>Available (TB)</h3>
+                <h2 class="text-accent">2.34</h2>
+            </div>
         </div>
-        <div class="info__space-item">
-            <h3>Available (TB)</h3>
-            <h2>2.34</h2>
+
+        <!-- 설정 메뉴 -->
+        <div class="card settings-card">
+            <button class="settings-btn">Manage Space</button>
+            <button class="settings-btn">Disc Settings</button>
+            <button class="settings-btn">Create Backup</button>
         </div>
-    </div>
-    <div class="info__settings">
-        <span>Manage Space</span>
-        <span> Disc Settings </span>
-        <span>Create Backup</span>
-    </div>
-</section>
-<section class="stats">
-    <div class="stats__stat">
-        <div class="stat__info">
-            <span class="stat__name">Free Space</span>
-            <span class="stat__size">2.34TB</span>
+    </section>
+
+    <!-- 오른쪽: 용량 통계 -->
+    <section class="stats-list">
+        <div class="stat-row bg-slate">
+            <span class="stat-name">System Files</span>
+            <span class="stat-size">0.50TB</span>
         </div>
-    </div>
-    <div class="stats__stat">
-        <div class="stat__info">
-            <span class="stat__name">Free Space</span>
-            <span class="stat__size">2.34TB</span>
+        <div class="stat-row bg-yellow">
+            <span class="stat-name">Media & Photos</span>
+            <span class="stat-size">1.82TB</span>
         </div>
-    </div>
-    <div class="stats__stat">
-        <div class="stat__info">
-            <span class="stat__name">Free Space</span>
-            <span class="stat__size">2.34TB</span>
+        <div class="stat-row bg-gray">
+            <span class="stat-name">Applications</span>
+            <span class="stat-size">1.20TB</span>
         </div>
-    </div>
-    <div class="stats__stat">
-        <div class="stat__info">
-            <span class="stat__name">Free Space</span>
-            <span class="stat__size">2.34TB</span>
+        <div class="stat-row bg-red">
+            <span class="stat-name">Documents</span>
+            <span class="stat-size">2.14TB</span>
         </div>
-    </div>
-    <div class="stats__stat">
-        <div class="stat__info">
-            <span class="stat__name">Free Space</span>
-            <span class="stat__size">2.34TB</span>
+        <div class="stat-row bg-dark">
+            <span class="stat-name">Free Space</span>
+            <span class="stat-size">2.34TB</span>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 </body>
 </html>
