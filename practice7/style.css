@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    /* 이전의 강제 100vh와 overflow: hidden 제거 */
+}
+
+.app-container {
+    display: flex;
+    /* 화면 최소 높이만 보장, 내용이 길어지면 자연스럽게 늘어남 */
+    min-height: 100vh;
+}
+
+/* --- 왼쪽 사이드바 --- */
+.sidebar {
+    width: 280px;
+    background-color: #111827;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* 화면이 좁아져도 사이드바 넓이 유지 */
+}
+
+/* ✅ 포인트 1: 로고 영역 높이 80px 고정 */
+.sidebar-brand {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 30px;
+    border-bottom: 1px solid #374151;
+}
+
+.brand-icon {
+    font-size: 24px;
+    color: #3b82f6;
+}
+
+.sidebar-brand h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 30px;
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.nav-item.active {
+    color: #3b82f6;
+    border-left-color: #3b82f6;
+}
+
+.nav-item i {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+/* --- 오른쪽 메인 콘텐츠 --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafb;
+}
+
+/* ✅ 포인트 2: 헤더 영역 높이 80px 고정 (로고 영역과 동일) */
+.top-header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.header-text p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.user-shortcut {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #6b7280;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.user-avatar-small {
+    width: 40px;
+    height: 40px;
+    background-color: #dbeafe;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ✅ 포인트 3: 강제 스크롤 영역을 없애고 자연스러운 래퍼로 변경 */
+.content-wrapper {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    /* 컨테이너가 폼 높이 이상으로 강제로 찌그러지거나 늘어나지 않게 설정 */
+    align-items: flex-start;
+}
+
+.profile-form {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* 이하 폼 및 버튼 스타일은 이전과 동일 */
+.avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.avatar-circle {
+    width: 90px;
+    height: 90px;
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.avatar-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+}
+
+.form-group.full-width {
+    flex: 0 0 100%;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #111827;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: 0.2s;
+}
+
+.form-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.custom-checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    flex-direction: row !important;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.checkbox-box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: 0.2s;
+    padding-bottom: 2px;
+}
+
+.checkmark-icon {
+    width: 6px;
+    height: 10px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.hidden-checkbox:checked + .checkbox-box {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.hidden-checkbox:checked + .checkbox-box .checkmark-icon {
+    opacity: 1;
+}
+
+.checkbox-label {
+    font-size: 15px;
+    color: #4b5563;
+    font-weight: 400 !important;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-outline {
+    background-color: white;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.btn-outline:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
